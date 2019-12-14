@@ -19,7 +19,7 @@ after_success:
         - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
 
 
-        - docker push tkavur/multi-client
-        - docker push tkavur/multi-bginx
-        - docker push tkavur/multi-api
-        - docker push tkavur/multi-worker
+        - docker push tkavuri/multi-client
+        - docker push tkavuri/multi-bginx
+        - docker push tkavuri/multi-api
+        - docker push tkavuri/multi-worker
