@@ -16,10 +16,10 @@ after_success:
         - docker build -t tkavuri/multi-worker ./worker
         - docker build -t tkavuri/multi-nginx ./nginx
 
-- echo "DOCKER_HUB_PASSWORD" | docker login -u "DOCKER_HUB_USERNAME" --password-stdin
+        - echo "DOCKER_HUB_PASSWORD" | docker login -u "DOCKER_HUB_USERNAME" --password-stdin
 
 
-- docker push tkavur/multi-client
-- docker push tkavur/multi-bginx
-- docker push tkavur/multi-api
-- docker push tkavur/multi-worker
+        - docker push tkavur/multi-client
+        - docker push tkavur/multi-bginx
+        - docker push tkavur/multi-api
+        - docker push tkavur/multi-worker
