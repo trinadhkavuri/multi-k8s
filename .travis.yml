@@ -20,6 +20,6 @@ after_success:
 
 
         - docker push tkavuri/multi-client
-        - docker push tkavuri/multi-bginx
+        - docker push tkavuri/multi-nginx
         - docker push tkavuri/multi-api
         - docker push tkavuri/multi-worker
