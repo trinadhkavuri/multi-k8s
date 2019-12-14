@@ -1,0 +1,29 @@
+sudo: required 
+
+services:
+        -docker
+
+before_install:
+        -docker build -t tkavuri/multi-docker -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true tkavuri/multi-docker npm test
+
+
+after_success:
+        - docker build -t tkavuri/multi-client ./client
+        - docker build -t tkavuri/multi-api ./server
+        - docker build -t tkavuri/multi-worker ./worker
+        - docker build -t tkavuri/multi-nginx ./nginx
+
+#login to Docker HUB-
+- echo "DOCKER_HUB_PASSWORD" | docker login -u "DOCKER_HUB_USERNAME" --password-stdin
+
+
+
+# push the images to Docker HUB
+
+- docker push tkavur/multi-client
+- docker push tkavur/multi-bginx
+- docker push tkavur/multi-api
+- docker push tkavur/multi-worker
