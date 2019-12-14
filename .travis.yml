@@ -19,8 +19,6 @@ after_success:
 #login to Docker HUB-
 - echo "DOCKER_HUB_PASSWORD" | docker login -u "DOCKER_HUB_USERNAME" --password-stdin
 
-
-
 # push the images to Docker HUB
 
 - docker push tkavur/multi-client
