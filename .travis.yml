@@ -23,3 +23,18 @@ after_success:
         - docker push tkavuri/multi-nginx
         - docker push tkavuri/multi-api
         - docker push tkavuri/multi-worker
+
+
+deploy:
+        edge: true
+        provider: elasticrbeanstalk
+        region: us-east2
+        app: multi-docker
+        env: MultiDocker-env
+        bucket_name: 
+        bucket_path: multi-docker
+
+        on:
+                branch: master
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key: $AWS_SECRET_KEY

@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinistions" : [
+        {
+            "name": "client",
+            "image": "tkavuri/multi-client",
+            "hostname": "client",
+            "essential" : false
+        },
+        {
+            "name": "api",
+            "image": "tkavuri/multi-api",
+            "hostname": "api",
+            "essential" : false
+        },
+        {
+            "name": "worker",
+            "image": "tkavuri/multi-worker",
+            "hostname": "worker",
+            "essential" : false
+        },
+        {
+            "name": "nginx",
+            "image": "tkavuri/multi-nginx",
+            "hostname": "nginx",
+            "essential" : true,
+            "portMappings": [
+                {
+                    "hostPort" : 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["client", "api"]
+        }
+    ]
+}
