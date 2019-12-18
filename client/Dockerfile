@@ -3,7 +3,6 @@ FROM node:alpine as builder
 WORKDIR /app/usr/complex/client
 COPY ./package.json ./
 RUN npm install 
-RUN npm audit fix
 
 COPY . . 
 
