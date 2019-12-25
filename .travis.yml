@@ -8,4 +8,20 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc 
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
+  - gcloud config set project multi-k8s-263015
+  - gcloud config set compute/zone us-central1-a	
+  - gcloud container clusters get-creddentials  multi-k8-cluster
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
+  - docker build -t tkavuri/react-test -f ./client/Dockerfile.dev .
+
+
+script:
+        - docker run -e CI=true tkavuri/react-test npm test 
+
+        - docker build -t tkavuri/react-test -f ./client/Dockerfile.dev ./client
+        - docker build -t tkavuri/multi-api ./server
+        - docker build -t tkavuri/multi-worker ./worker
+        - docker build -t tkavuri/multi-nginx ./nginx
+
+
   
