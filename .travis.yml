@@ -24,7 +24,6 @@ before_install:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
         - docker build -t tkavuri/react-test -f ./client/Dockerfile.dev .
 
-
 script:
         - docker run -e CI=true tkavuri/react-test npm test 
 
