@@ -14,7 +14,7 @@ docker push tkavuri/multi-server:$SHA
 docker push tkavuri/multi-worker:$SHA
 
 kubectl apply -f k8s
-kubectl set image deployment/api-deployment multi-api=tkavuri/multi-api:$SHA
-kubectl set image deployment/client-deployment multi-client=tkavuri/multi-client:$SHA
-kubectl set image deployment/worker-deployment multi-worker=tkavuri/multi-worker:$SHA
+kubectl set image deployment/api-deployment api=tkavuri/multi-api:$SHA
+kubectl set image deployment/client-deployment client=tkavuri/multi-client:$SHA
+kubectl set image deployment/worker-deployment worker=tkavuri/multi-worker:$SHA
 
