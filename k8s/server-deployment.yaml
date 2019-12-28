@@ -30,7 +30,7 @@ spec:
             value: redis-cluster-ip-service
           - name: PGPORT
             value: '5432'
-          - name: PGDATABSE
+          - name: PGDATABASE
             value: postgres          
           - name: PGPASSWORD
             valueFrom:
