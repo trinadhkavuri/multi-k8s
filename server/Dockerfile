@@ -1,5 +1,4 @@
-#FROM node:alpine
-FROM centos:7.7
+FROM node:alpine
 
 WORKDIR /app/usr/complex/server
 COPY ./package.json ./
