@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      podname: postgres  
+      component: postgres  
   template: 
     metadata:
       labels:
-        podname: postgres
+        component: postgres
     
     spec:
       volumes: 
@@ -29,13 +29,13 @@ spec:
             subPath: postgres
         env:
           - name: POSTGRES_USER
-            value: postgres
+            value: 'postgres'
           - name: PGPORT
             value: '5432'
           - name: POSTGRES_DB
-            value: postgres
+            value: 'postgres'
           - name: POSTGRES_PASSWORD
-            value: postgres
+            value: 'postgres'
             #valueFrom:
             #   secretKeyRef: 
             #    name: pgpassword
