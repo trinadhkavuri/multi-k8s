@@ -1,4 +1,5 @@
-FROM node:alpine as builder
+#FROM node:alpine as builder
+FROM centos:7.7 builder
 
 WORKDIR /app/usr/complex/client
 COPY ./package.json ./
