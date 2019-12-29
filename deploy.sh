@@ -20,3 +20,4 @@ kubectl set image deployment/worker-deployment worker=tkavuri/multi-worker:$SHA
 
 
 echo POSTGRES PASSWORD : $POSTGRES_PASSWORD
+echo POSTGRES PGPASSWORD : $PGPASSWORD
