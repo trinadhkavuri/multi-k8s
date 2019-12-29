@@ -20,7 +20,7 @@ spec:
             claimName: database-persistent-volume-claim
       containers:
       - name: postgres
-        image: centos/postgresql-96-centos7
+        image: postgres
         ports:
           - containerPort: 5432
         volumeMounts:
@@ -28,8 +28,6 @@ spec:
             mountPath: /var/lib/postgresql/data
             subPath: postgres
         env:
-          - name: POSTGRESQL_USER
-            value: 'postgres'
           - name: PGPORT
             value: '5432'
           - name: POSTGRESQL_DATABASE
@@ -37,7 +35,7 @@ spec:
           - name: POSTGRESQL_PASSWORD
             value: 'postgres'
             - name: POSTGRES_USER
-            value: 'postgresadmin'
+            value: 'postgres'
           - name: PGPORT
             value: '5432'
           - name: POSTGRES_DB
