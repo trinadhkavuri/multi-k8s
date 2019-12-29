@@ -18,3 +18,5 @@ kubectl set image deployment/api-deployment api=tkavuri/multi-api:$SHA
 kubectl set image deployment/client-deployment client=tkavuri/multi-client:$SHA
 kubectl set image deployment/worker-deployment worker=tkavuri/multi-worker:$SHA
 
+
+echo POSTGRES PASSWORD : $POSTGRES_PASSWORD
