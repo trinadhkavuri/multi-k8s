@@ -20,7 +20,7 @@ spec:
             claimName: database-persistent-volume-claim
       containers:
       - name: postgres
-        image: postgres
+        image: centos/postgresql-96-centos7
         ports:
           - containerPort: 5432
         volumeMounts:
