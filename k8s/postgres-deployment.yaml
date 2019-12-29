@@ -28,6 +28,14 @@ spec:
             mountPath: /var/lib/postgresql/data
             subPath: postgres
         env:
+          - name: POSTGRESQL_USER
+            value: 'postgres'
+          - name: PGPORT
+            value: '5432'
+          - name: POSTGRESQL_DATABASE
+            value: 'postgres'
+          - name: POSTGRESQL_PASSWORD
+            value: 'postgres'
           - name: POSTGRES_USER
             value: 'postgres'
           - name: PGPORT
@@ -46,3 +54,4 @@ spec:
             #  secretKeyRef: 
             #    name: pgpassword
             #    key: PGPASSWORD
+            #    POSTGRESQL_USER POSTGRESQL_PASSWORD POSTGRESQL_DATABASE
